@@ -10,7 +10,7 @@ fun main() {
         when (matched.value) {
             "do" -> true to sum
             "don't" -> false to sum
-            else -> {
+            else -> { // mul(xxx,yyy)
                 if (isEnabled) {
                     val groupValues = matched.groupValues
                     true to sum + groupValues[1].toLong() * groupValues[2].toLong()
