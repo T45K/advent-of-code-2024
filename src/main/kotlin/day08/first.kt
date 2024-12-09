@@ -15,7 +15,7 @@ fun main() {
 
     val answer = pointsBySymbol.values.flatMap { points ->
         points.flatMap { basePoint ->
-            points.mapNotNull { targetPoint ->
+            points.filter { basePoint != it }.mapNotNull { targetPoint ->
                 val antiNodeX = 2 * targetPoint.first - basePoint.first
                 val antiNodeY = 2 * targetPoint.second - basePoint.second
                 if (0 <= antiNodeX && antiNodeX < h &&
