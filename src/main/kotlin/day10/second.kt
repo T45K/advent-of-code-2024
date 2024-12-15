@@ -1,5 +1,6 @@
 package day10
 
+import ignoreException
 import kotlin.io.path.readLines
 import resourcePath
 
@@ -32,11 +33,4 @@ fun main() {
 
     val answer = pointsByNumber[0]!!.sumOf { topsByPoints[it] ?: 0 }
     println(answer)
-}
-
-private fun ignoreException(block: () -> Unit) {
-    try {
-        block()
-    } catch (_: Exception) {
-    }
 }
